@@ -58,10 +58,9 @@ public class login_admin extends AppCompatActivity {
             public void onClick(View view) {
                 // 메소드 호출
                 login_adminRequestPost();
+
             }
         });
-
-
     }
 
     public void login_adminRequestPost(){
@@ -77,7 +76,8 @@ public class login_admin extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Log.d("login_senior","응답받은 데이터 >>"+response);
-                        if (response.toString().equals("성공")){
+                        if (response.toString().equals(login_id)){
+                            Log.d("response",response.toString());
                             Intent i =  new Intent(login_admin.this, userSearch.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY); // 액티비티 스택에 쌓이지 않음
                             startActivity( i );
@@ -107,56 +107,5 @@ public class login_admin extends AppCompatActivity {
         queue.add(stringRequest_login);
 
     }
-
-//    public void onResponse(String response) {
-//        try {
-//            JSONObject jsonObject = new JSONObject(response);
-//            boolean success = jsonObject.getBoolean("success");
-//
-//            if (success) {//로그인 성공시
-//
-//                String admin_id = jsonObject.getString("admin_id");
-//                String pw = jsonObject.getString("pw");
-//
-//                Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", admin_id), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(login_admin.this, search.class);
-//                startActivity(intent);
-//
-//                intent.putExtra("UserId", admin_id);
-//                intent.putExtra("UserPw", pw);
-//
-//                startActivity(intent);
-//
-//            } else {//로그인 실패시
-//                Toast.makeText(getApplicationContext(), "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//    public void onButtonLogin(View v){
-//        String admin_id = et_id.getText().toString();
-//        String pw = et_pw.getText().toString();
-//
-//        Myapplication.isLogin = true;
-//        Myapplication.admin_id = admin_id;
-//        Myapplication.pw = pw;
-//
-//        setContentView(R.layout.activity_user_search);
-//
-//    }
-
-
-
-//    public void onClickJoin(View v) {
-//        //다른 화면(액티비티)로 이동
-//        //자신 액티비티 객체, 이동할 액티비티 클래스
-//        Intent i = new Intent(this, join_admin.class);
-//        i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY); // 액티비티 스택에 쌓이지 않음
-//        startActivity( i );
-//    }
 
 }

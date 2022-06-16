@@ -59,6 +59,8 @@ public class login_senior extends AppCompatActivity {
                 if (et_id.getText().toString().equals("")){
                     Toast.makeText(login_senior.this, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
                 }else{
+                    String s_id = et_id.getText().toString();
+                    Intent i = new Intent(login_senior.this, userMainActivity.class);
                     user_login();
                 }
             }

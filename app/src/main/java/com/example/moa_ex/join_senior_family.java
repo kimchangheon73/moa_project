@@ -60,8 +60,6 @@ public class join_senior_family extends AppCompatActivity {
 
         btn_next = findViewById(R.id.btn_next);
 
-
-
         R_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedID) {
@@ -84,9 +82,7 @@ public class join_senior_family extends AppCompatActivity {
                 } else {
                     Toast.makeText(join_senior_family.this, "'없다.'를 선택하셨습니다", Toast.LENGTH_SHORT).show();
                     finish();
-
                 }
-
 
             }
         });
@@ -101,9 +97,7 @@ public class join_senior_family extends AppCompatActivity {
                 RadioButton rb=(RadioButton)findViewById(id);
 
                 String FAMILY = rb.getText().toString();
-
                 i.putExtra("FAMILY",FAMILY);
-
                 Log.i(FAMILY,"checking..");
 
                 startActivity(i);

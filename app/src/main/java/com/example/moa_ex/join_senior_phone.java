@@ -93,8 +93,10 @@ public class join_senior_phone extends AppCompatActivity {
 
                 Intent i4 = getIntent();
                 String S_NAME = i4.getStringExtra("S_NAME");
+
                 Intent i5 = getIntent();
                 String S_ID = i5.getStringExtra("S_ID");
+
                 Intent i6 = getIntent();
                 String S_BIRTH = i6.getStringExtra("S_BIRTH");
 

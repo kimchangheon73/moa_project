@@ -50,19 +50,15 @@ public class join_senior_f_phone extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "가족분 연락처를 입력해주세요", Toast.LENGTH_SHORT).show();
 
                 } else {
-
+                    // 폰번호 넘기기~
                     String F_PHONE = ed_Pphone.getText().toString();
-
                     Intent i = new Intent(join_senior_f_phone.this, userMainActivity.class);
-
                     i.putExtra("F_PHONE", F_PHONE);
 
                     startActivity(i);
                     finish();
-
                 }
                 join_sRequestPost4();
-                queue.add(stringRequest_join_fphone);
                 String num = ed_Pphone.getText().toString();
                 Log.d(num, "onClick: ");
             }
@@ -71,7 +67,7 @@ public class join_senior_f_phone extends AppCompatActivity {
         public void join_sRequestPost4(){
 
             int method = Request.Method.POST;
-            String server_url = "http://172.30.1.42:3000/home";
+            String server_url = "http://172.30.1.41:3000/home/protector_tel";
 
             stringRequest_join_fphone = new StringRequest(
                     method,
@@ -108,7 +104,7 @@ public class join_senior_f_phone extends AppCompatActivity {
 
                     param.put("FAMILY",FAMILY);
                     param.put("P_NAME",F_NAME);
-                    param.put("F_PHONE",F_PHONE);
+                    param.put("P_PHONE",F_PHONE);
 
                     Log.i(FAMILY,"checking..");
                     Log.i(F_NAME,"checking..");

@@ -52,14 +52,7 @@ public class join_senior_name extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "성함을 입력해주세요", Toast.LENGTH_SHORT).show();
 
                 }else{
-
-                    String S_NAME = ed_Sname.getText().toString();
-
                     Intent i = new Intent(join_senior_name.this, join_senior_id.class);
-
-                    i.putExtra("S_NAME",S_NAME);
-                    Log.i(S_NAME, "onClick: ");
-
                     startActivity(i);
                     finish();
 
